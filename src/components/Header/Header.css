@@ -20,6 +20,11 @@
   font-size: inherit;
   line-height: inherit;
   border: none;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  color: #575656;
 }
 
 .header__user-container {
