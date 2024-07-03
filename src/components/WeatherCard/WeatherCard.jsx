@@ -3,10 +3,10 @@ import sunnyDay from "../../assets/Day/sunnyDay.png";
 
 function WeatherCard() {
   return (
-    <div className="weather">
-      <img src={sunnyDay} alt="" className="weather__image" />
-      <h2 className="weather__temperature">75F</h2>
-    </div>
+    <section className="weather-card">
+      <img src={sunnyDay} alt="" className="weather-card__image" />
+      <h2 className="weather-card__temperature">75&deg;F</h2>
+    </section>
   );
 }
 
