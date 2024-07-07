@@ -1,11 +1,10 @@
 import "./ItemCard.css";
-import suny from "../../assets/Day/sunnyDay.png";
 
-function ItemCard() {
+function ItemCard({ item }) {
   return (
-    <div className="card">
-      <img src={suny} alt="" className="card__image" />
-      <p className="card__title">Cap</p>
+    <div>
+      <h2>{item.name}</h2>
+      <img src={item.link} alt={item.name} />
     </div>
   );
 }
