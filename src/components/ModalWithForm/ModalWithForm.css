@@ -8,6 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+}
+
+.modal_opened {
+  visibility: visible;
 }
 
 .modal__content {
@@ -41,8 +46,9 @@
   top: 20px;
   right: 28px;
   border: none;
-  background-color: #fff;
+  background-color: transparent;
   cursor: pointer;
+  z-index: 1;
 }
 
 .modal__label {
@@ -81,6 +87,10 @@
 }
 
 .modal__radio-input {
+  cursor: pointer;
+}
+
+.modal__radio-input:checked + .modal__span {
   color: #000;
 }
 
