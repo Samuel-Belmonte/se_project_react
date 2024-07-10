@@ -49,7 +49,7 @@ function App() {
         <Footer />
       </div>
       <ModalWithForm
-        activeModal={activeModal}
+        isOpen={activeModal === "add-garment"}
         buttonText="Add garment"
         title="New garment"
         onClose={closeActiveModal}
@@ -107,7 +107,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
-        activeModal={activeModal}
+        isOpen={activeModal === "preview"}
         onClose={closeActiveModal}
         card={selectedCard}
       />
