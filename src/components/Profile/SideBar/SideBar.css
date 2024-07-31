@@ -1,0 +1,19 @@
+.sidebar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 19px;
+  min-width: 229px;
+}
+
+.sidebar__image {
+  width: 56px;
+  height: 56px;
+}
+
+.sidebar__name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0;
+}

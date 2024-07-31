@@ -1,0 +1,25 @@
+.clothes-section {
+  margin-top: 34.5px;
+}
+
+.clothes-section__top {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.clothes-section__subtitle {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  margin: 0;
+}
+
+.clothes-section__button {
+  border: none;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 25px;
+  color: rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+}
