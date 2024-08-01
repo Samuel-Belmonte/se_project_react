@@ -13,6 +13,7 @@ import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperature
 import AddItemModal from "../AddItemModal/AddItemModal";
 import ItemCard from "../ItemCard/ItemCard";
 import Profile from "../Profile/Profile";
+import { getItems } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -24,6 +25,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
+  const [clothingItems, setClothingItems] = useState([]);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -45,6 +47,18 @@ function App() {
         setWeatherData(filteredData);
       })
       .catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    //json-server --watch db.json --id _id --port 3001 (command for server)
+    //then need to addItems (POST) and deleteItems (DELETE)
+    getItems()
+      .then((data) => {
+        console.log(data);
+        //set the clothing items usingf the data that was returned
+      })
+      .catch(console.error);
+    //need to handleRenderCard in Main and profile components
   }, []);
 
   const handleToggleSwitchChange = () => {
@@ -70,6 +84,7 @@ function App() {
                 <Main
                   weatherData={weatherData}
                   handleCardClick={handleCardClick}
+                  clothingItems={clothingItems}
                 />
               }
             />
