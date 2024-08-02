@@ -8,4 +8,19 @@ function getItems() {
   });
 }
 
-export { getItems };
+function postItem(name, imageUrl, weather) {
+  return (fetch(`${baseUrl}/items`),
+  {
+    method: "POST",
+    body: JSON.stringify({
+      name: name,
+      weather: weather,
+      imageUrl: imageUrl,
+    }),
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  }).then((res) => res.json());
+}
+
+export { getItems, postItem };

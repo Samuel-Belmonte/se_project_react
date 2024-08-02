@@ -15,6 +15,15 @@ import ItemCard from "../ItemCard/ItemCard";
 import Profile from "../Profile/Profile";
 import { getItems } from "../../utils/api";
 
+//json-server --watch db.json --id _id --port 3001 (command for server)
+//Fix renderCards so that URL works
+//need to addItems (POST) and deleteItems (DELETE)
+//Add a delete button to cards along with confirmation modal
+//need to handleRenderCard in Main and profile components
+//need to import postItem and turn into handleAddItem function then pass that function through
+//delete all code that isn't used like imports, etc.
+//Fix deployement on GitHub Pages
+
 function App() {
   const [weatherData, setWeatherData] = useState({
     type: "",
@@ -50,15 +59,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    //json-server --watch db.json --id _id --port 3001 (command for server)
-    //then need to addItems (POST) and deleteItems (DELETE)
     getItems()
       .then((data) => {
-        console.log(data);
-        //set the clothing items usingf the data that was returned
+        setClothingItems(data);
+        //set the clothing items using the data that was returned
       })
       .catch(console.error);
-    //need to handleRenderCard in Main and profile components
   }, []);
 
   const handleToggleSwitchChange = () => {
