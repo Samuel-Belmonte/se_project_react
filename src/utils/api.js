@@ -1,13 +1,16 @@
 const baseUrl = "http://localhost:3001";
 
-//make function processServerRequest that does the .then in a function
-
-function getItems() {
-  return fetch(`${baseUrl}/items`).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+//to insert into the then section
+function processServerRequest(res) {
+  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
+//render card function
+function getItems() {
+  return fetch(`${baseUrl}/items`).then(processServerRequest);
+}
+
+//add card function
 function postItem(name, imageUrl, weather) {
   return (fetch(`${baseUrl}/items`),
   {
@@ -20,7 +23,18 @@ function postItem(name, imageUrl, weather) {
     headers: {
       "Content-Type": "application/json; charset=UTF-8",
     },
-  }).then((res) => res.json());
+  }).then(processServerRequest);
 }
 
-export { getItems, postItem };
+//delete card function
+function deleteItem(id) {
+  return (fetch(`${baseUrl}/items/${id}`),
+  {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json; charset=UTF-8",
+    },
+  }).then(processServerRequest);
+}
+
+export { getItems, postItem, deleteItem };

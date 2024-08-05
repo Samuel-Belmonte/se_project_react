@@ -6,21 +6,25 @@ import { coordinates, APIkey } from "../../utils/constants";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
-import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import ItemCard from "../ItemCard/ItemCard";
 import Profile from "../Profile/Profile";
-import { getItems } from "../../utils/api";
+import { getItems, postItem, deleteItem } from "../../utils/api";
 
 //json-server --watch db.json --id _id --port 3001 (command for server)
+
+//1st
 //Fix renderCards so that URL works
+//need to handleRenderCard in Main and profile components
+
+//2nd
 //need to addItems (POST) and deleteItems (DELETE)
 //Add a delete button to cards along with confirmation modal
-//need to handleRenderCard in Main and profile components
 //need to import postItem and turn into handleAddItem function then pass that function through
+
+//3rd
 //delete all code that isn't used like imports, etc.
 //Fix deployement on GitHub Pages
 
@@ -30,6 +34,7 @@ function App() {
     temp: { F: 999 },
     city: "",
   });
+
   //left is variable name, right is function used to change the variable
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
@@ -62,10 +67,17 @@ function App() {
     getItems()
       .then((data) => {
         setClothingItems(data);
-        //set the clothing items using the data that was returned
       })
-      .catch(console.error);
+      .catch((err) => console.error(err));
   }, []);
+
+  // useEffect(() => {
+  //   getItems()
+  //     .then((data) => {
+  //       setClothingItems(data);
+  //     })
+  //     .catch((err) => console.error(err));
+  // }, []);
 
   const handleToggleSwitchChange = () => {
     if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
