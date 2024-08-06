@@ -11,7 +11,7 @@ function getItems() {
 }
 
 //add card function
-function postItem(name, imageUrl, weather) {
+function postItem({ name, imageUrl, weather }) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
     body: JSON.stringify({

@@ -80,7 +80,7 @@ function App() {
     postItem(item)
       .then((res) => {
         setClothingItems([res, ...clothingItems]);
-        //need setActiveModal here to close after adding card
+        closeActiveModal();
       })
       .catch((err) => console.error(err));
   };
@@ -88,10 +88,11 @@ function App() {
   const handleDeleteItem = (selectedCard) => {
     deleteItem(selectedCard._id)
       .then(() => {
-        const filteredArray = clothingItems.filter((item) => {
+        const newClothingItems = clothingItems.filter((item) => {
           return item.name !== selectedCard.name ? item : null;
         });
-        setClothingItems(filteredArray);
+        setClothingItems(newClothingItems);
+        closeActiveModal();
       })
       .catch((err) => console.error(err));
   };
