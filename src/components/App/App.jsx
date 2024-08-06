@@ -15,12 +15,6 @@ import { getItems, postItem, deleteItem } from "../../utils/api";
 
 //json-server --watch db.json --id _id --port 3001 (command for server)
 
-//Fix renderCards so that URL works
-//need to handleRenderCard in Main and profile components
-
-//styling for cards in profile.jsx
-
-//delete all code that isn't used like imports, etc.
 //Fix deployement on GitHub Pages
 
 function App() {
