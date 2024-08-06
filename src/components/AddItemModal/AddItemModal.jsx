@@ -41,6 +41,7 @@ function AddItemModal({ closeActiveModal, onAddItem, isOpen }) {
           id="name"
           value={name}
           onChange={handleNameChange}
+          required
         />
       </label>
       <label htmlFor="imageUrl" className="modal__label">
@@ -52,6 +53,7 @@ function AddItemModal({ closeActiveModal, onAddItem, isOpen }) {
           id="imageUrl"
           value={link}
           onChange={handleLinkChange}
+          required
         />
       </label>
       <fieldset className="modal__fieldset">
