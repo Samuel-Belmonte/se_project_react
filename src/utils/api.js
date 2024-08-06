@@ -12,8 +12,7 @@ function getItems() {
 
 //add card function
 function postItem(name, imageUrl, weather) {
-  return (fetch(`${baseUrl}/items`),
-  {
+  return fetch(`${baseUrl}/items`, {
     method: "POST",
     body: JSON.stringify({
       name: name,
@@ -28,8 +27,7 @@ function postItem(name, imageUrl, weather) {
 
 //delete card function
 function deleteItem(id) {
-  return (fetch(`${baseUrl}/items/${id}`),
-  {
+  return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json; charset=UTF-8",

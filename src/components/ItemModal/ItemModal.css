@@ -19,6 +19,7 @@
   position: absolute;
   bottom: 32px;
   left: 32px;
+  display: flex;
 }
 
 .modal__caption {
@@ -35,4 +36,17 @@
   font-size: 20px;
   line-height: 24px;
   margin-bottom: -4px;
+}
+
+.modal__delete {
+  color: #ff4d00;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  cursor: pointer;
+  left: 315px;
+  width: 100%;
 }
