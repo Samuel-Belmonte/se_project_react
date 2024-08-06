@@ -22,12 +22,14 @@
   max-width: 496px;
   box-sizing: border-box;
   width: 100%;
-  max-height: 436px;
-  height: 100%;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   border-radius: 20px;
+}
+
+.modal__content_type_form {
+  max-height: 436px;
 }
 
 .modal__form {

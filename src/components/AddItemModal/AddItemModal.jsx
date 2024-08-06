@@ -2,12 +2,6 @@ import React, { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function AddItemModal({ closeActiveModal, onAddItem, isOpen }) {
-  useEffect(() => {
-    setName("");
-    setLink("");
-    setWeather("");
-  });
-
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
     console.log(e.target.value);

@@ -71,10 +71,10 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  const handleAddItem = ({ name, image, weather }) => {
+  const handleAddItem = ({ name, link, weather }) => {
     const item = {
       name,
-      image,
+      link,
       weather,
     };
     postItem(item)
@@ -117,7 +117,13 @@ function App() {
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                  handleAddClick={handleAddClick}
+                />
+              }
             />
           </Routes>
           <Footer />
