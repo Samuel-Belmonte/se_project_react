@@ -37,18 +37,6 @@
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Jeans.png?etag=58345e8bef1ce5f95ac882e71d309e6c"
     },
     {
-      "_id": 10,
-      "name": "Scarf",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Scarf.png?etag=74efbee93810c926b5507e862c6cb76c"
-    },
-    {
-      "_id": 12,
-      "name": "Skirt",
-      "weather": "hot",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Skirt.png?etag=27a6bea7e1b63218820d615876fa31d1"
-    },
-    {
       "_id": 13,
       "name": "Sneakers",
       "weather": "warm",
@@ -71,12 +59,6 @@
       "name": "T-Shirt",
       "weather": "hot",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/T-Shirt.png?etag=44ed1963c44ab19cd2f5011522c5fc09"
-    },
-    {
-      "name": "Vans shoes",
-      "weather": "warm",
-      "imageUrl": "https://images.vans.com/is/image/Vans/VN000EE3_BLK_HERO?wid=800&hei=1004&fmt=jpeg&qlt=50&resMode=sharp2&op_usm=0.9,1.5,8,0",
-      "_id": 20
     }
   ]
 }
