@@ -28,7 +28,7 @@ This project takes data from a weather API and based on the temperature and weat
 
 ![WTW3](https://github.com/user-attachments/assets/5b388f71-4e6c-44d7-b866-d6b03a187fdc)
 
-## What's Left
+## Plans to Improve
 
 - Make responsive with media queries
 - Add backened with Node.js and MongoDB
