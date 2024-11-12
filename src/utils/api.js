@@ -1,4 +1,4 @@
-const baseUrl = "http://localhost:3001";
+export const baseUrl = "http://localhost:3001";
 
 //to insert into the then section
 function processServerRequest(res) {
