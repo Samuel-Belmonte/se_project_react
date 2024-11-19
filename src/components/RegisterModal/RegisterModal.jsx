@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "../ModalWithForm/ModalWithForm.css";
+import "./RegisterModal.css";
 
 function AddItemModal({
   closeActiveModal,

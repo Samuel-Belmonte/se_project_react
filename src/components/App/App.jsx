@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import "./App.css";
 import { coordinates, APIkey } from "../../utils/constants";
@@ -13,6 +13,9 @@ import AddItemModal from "../AddItemModal/AddItemModal";
 import Profile from "../Profile/Profile";
 import { getItems, postItem, deleteItem } from "../../utils/api";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import { signIn, signUp } from "../../utils/auth";
 
 //json-server --watch db.json --id _id --port 3001 (command for server)
 
@@ -30,6 +33,10 @@ function App() {
   const [selectedCard, setSelectedCard] = useState({});
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [currentUser, setCurrentUser] = useState({});
+  const [isLiked, setIsLiked] = useState(false);
+  const navigate = useNavigate();
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -110,6 +117,18 @@ function App() {
       .catch((err) => console.error(err));
   };
 
+  //User registration
+  const handleRegistration = ({ email, password, name, avatar }) => {
+    const userProfile = { email, password, name, avatar };
+    signUp(userProfile).then((res) => {
+      setCurrentUser(userProfile);
+      signIn({ email, password });
+      setIsLoggedIn(true);
+      closeActiveModal();
+      navigate("/profile");
+    });
+  };
+
   return (
     <div className="page">
       <CurrentTemperatureUnitContext.Provider
@@ -157,6 +176,18 @@ function App() {
           onDelete={handleDeleteItem}
         />
       </CurrentTemperatureUnitContext.Provider>
+      <LoginModal
+        isOpen={activeModal === "login"}
+        onClose={closeActiveModal}
+        // handleLogin={handleLogin}
+        // handleRegisterModal={handleRegisterModal}
+      />
+      <RegisterModal
+        isOpen={activeModal === "signup"}
+        onClose={closeActiveModal}
+        // handleLogin={handleLogin}
+        handleRegister={handleRegistration}
+      />
     </div>
   );
 }
